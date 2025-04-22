@@ -86,4 +86,6 @@ if __name__ == '__main__':
     # Serve the app in production mode using Waitress WSGI server
     logging.info("Starting Flask app in production mode...")
     print("Starting Flask app in production mode...")
-    serve(app, host='0.0.0.0', port=5050)
+    port = int(os.environ.get("PORT", 5050))
+    serve(app, host='0.0.0.0', port=port)
+
